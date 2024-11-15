@@ -160,7 +160,7 @@ plot(res, type = "tnull")
 
 ```
 
-Below the two curves we see a line that represents the confidence interval ranging from `r round(res$effsize$lower.ci[1], 2)` to `r round(res$effsize$upper.ci[1], 2)`, and a dot on the line that indicates the observed mean difference of `r round(res$effsize$estimate[1], 2)`. Let's first look at the left curve. We see the green highlighted area in the tails that highlights which observed mean differences would be extreme enough to statistically reject an effect of -0.5. Our observed mean difference of -0.32 lies very close to -0.5, and if we look at the left distribution, the mean is not far enough away from -0.5 to fall in the green area that indicates when observed differences would be statistically significant. We can also perform the equivalence test using the TOSTER package, and look at the results. 
+Below the two curves, we see a line that represents the confidence interval ranging from `r round(res$effsize$lower.ci[1], 2)` to `r round(res$effsize$upper.ci[1], 2)`, and a dot on the line that indicates the observed mean difference of `r round(res$effsize$estimate[1], 2)`. Let's first look at the left curve. We see the green highlighted area in the tails that highlights which observed mean differences would be extreme enough to statistically reject an effect of -0.5. Our observed mean difference of -0.32 lies very close to -0.5, and would not be statistically significant. But, if we look at the right distribution, the mean is far enough away from 0.5 to fall in the green area, indicating that the observed differences would be statistically significant. We can also perform the equivalence test using the TOSTER package, and look at the results. 
 
 ```{r}
 TOSTER::tsum_TOST(m1 = 4.55, 
